@@ -5,7 +5,10 @@
     appRandomColor
     *ngFor="let tag of tagArr"
     (click)="filterTag(tag)"
-    class="badge text-white m-2"
+    class="badge text-white m-2 opacity-50"
+    [ngClass]="{
+      'opacity-100 border border-2 border-dark': selectedTag === tag
+    }"
     >{{ tag | uppercase }}</span
   >
 </div>

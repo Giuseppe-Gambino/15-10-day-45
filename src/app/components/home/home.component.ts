@@ -27,5 +27,6 @@ export class HomeComponent {
 
   filterTag(tag: string) {
     this.postArr = this.AllPost.getPostsByTag(tag);
+    this.selectedTag = tag;
   }
 }
