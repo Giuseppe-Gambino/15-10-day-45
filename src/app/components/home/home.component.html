@@ -1,0 +1,56 @@
+<h1>potrebbero piacerti questi post!</h1>
+<!-- arr di tag -->
+<div>
+  <span
+    appRandomColor
+    *ngFor="let tag of tagArr"
+    (click)="filterTag(tag)"
+    class="badge text-bg-secondary m-2"
+    >{{ tag | uppercase }}</span
+  >
+</div>
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+  <!-- card -->
+  <div *ngFor="let post of postArr" class="col">
+    <app-preset-post [post]="post">
+      <div class="card-body">
+        <form #form="ngForm">
+          <input
+            type="text"
+            name="title"
+            class="form-control mb-2"
+            [(ngModel)]="post.title"
+            required
+            minlength="3"
+          />
+          <input
+            type="text"
+            name="tag1"
+            class="form-control mb-2"
+            [(ngModel)]="post.tags[0]"
+            required
+            minlength="3"
+          />
+          <input
+            type="text"
+            name="tag2"
+            class="form-control mb-2"
+            [(ngModel)]="post.tags[1]"
+            required
+            minlength="3"
+          />
+          <input
+            type="text"
+            name="tag3"
+            class="form-control mb-2"
+            [(ngModel)]="post.tags[2]"
+            required
+            minlength="3"
+          />
+          <button type="submit" class="btn btn-primary">Salva</button>
+        </form>
+      </div>
+    </app-preset-post>
+  </div>
+</div>

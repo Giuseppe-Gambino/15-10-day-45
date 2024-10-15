@@ -1,0 +1,14 @@
+<div class="card h-100" *ngIf="post">
+  <div class="card-body">
+    <h5 class="card-title">{{ post.title }}</h5>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{ post.tags[0] }}</li>
+      <li class="list-group-item">{{ post.tags[1] }}</li>
+      <li class="list-group-item">{{ post.tags[2] }}</li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <a class="btn btn-primary" [routerLink]="['/detail', post.id]">Dettagli</a>
+  </div>
+  <ng-content></ng-content>
+</div>
