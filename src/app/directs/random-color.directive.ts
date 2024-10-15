@@ -17,7 +17,7 @@ export class RandomColorDirective {
   }
 
   ngOnInit() {
-    this.ref.nativeElement.style.background = this.randomColor;
+    this.ref.nativeElement.style.backgroundColor = this.randomColor;
     console.log(this.ref.nativeElement);
   }
 }
